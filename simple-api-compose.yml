@@ -1,0 +1,16 @@
+version: '0.1'
+
+services:
+
+  moodle:
+    container_name: lp-go
+    image: test-api-go:0.0.1
+    ports:
+      - "8080:8080"
+    networks:
+      - local_dev
+    restart: unless-stopped
+
+networks:
+  local_dev:
+    driver: bridge
